@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar bg-light p-3 pe-5 ps-5 mb-5">
+        <div class="col-3 navbar-brand">
+            <h4 class="m-0">Library</h4>
+        </div>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            ADD BOOK
+        </button>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enter book information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="addBook()" id="addBookForm">
+
+                        <div class="mb-3">
+                            <input type="text" id="title" class="form-control" placeholder="Title" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" id="author" class="form-control" placeholder="Author" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="number" id="pages" class="form-control" placeholder="Number of pages" required/>
+                        </div>
+
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" placeholder="Mark this book as read"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" disabled>
+                            <span class="input-group-text" id="basic-addon2">
+                                <input type="checkbox" class="form-check-input m-0" id="isRead" />
+                            </span>
+                        </div>
+
+                        <div class="buttons-section">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add book</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Books display section-->
+    <section>
+        <div class="library" id="library">
+           
+        </div>
+    </section>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
